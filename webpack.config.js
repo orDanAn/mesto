@@ -17,7 +17,8 @@ module.exports = {
                 test: /\.css$/,
                 use: [
                     (isDev ? 'style-loader' : MiniCssExtractPlugin.loader),
-                    'css-loader' 
+                    'css-loader',
+                    'postcss-loader'
                     
                 ]
             },
@@ -27,15 +28,15 @@ module.exports = {
                 exclude: /node_modules/
             },
             {
-                test: /\.(png|jpg|gif|ico|svg)$/,
+                test: /\.(png|jpe?g|gif|ico|svg)$/i,
                 use: [
-                     'file-loader?name=../images/[name].[ext]', // указали папку, куда складывать изображения
-                     {
-                         loader: 'image-webpack-loader',
-                         options: { 
-                            bypassOnDebug: true, // webpack@1.x
-                            disable: true, // webpack@2.x and newer
-                          }
+                'file-loader?name=./images/[name].[ext]',
+                {
+                    loader: 'image-webpack-loader',
+                    options: {
+                    bypassOnDebug: true, // webpack@1.x
+                    disable: true // webpack@2.x and newer
+            }
                      },
                 ],
             },
