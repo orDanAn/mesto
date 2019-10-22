@@ -32,9 +32,14 @@ class Api {
         const userInfoName = document.querySelector('.user-info__name')
         const userInfoJob = document.querySelector('.user-info__job')
         const avatarImage = document.querySelector('.user-info__photo')
+        const editNameVal = document.getElementById('edit_name')
+        const editJobVal = document.getElementById('edit_job')
         avatarImage.setAttribute('style', `background-image: url(${user.avatar})`)
-        userInfoName.textContent = user.name
-        userInfoJob.textContent = user.about
+        userInfoName.textContent = user.name;
+        userInfoJob.textContent = user.about;
+        editNameVal.value = user.name;
+        editJobVal.value = user.about;
+        
       })
       .catch((err) => {
         console.log(err)

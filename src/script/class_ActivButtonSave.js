@@ -6,14 +6,14 @@ import {buttonSave} from './index';
 
 class ActivButtonSave {
   constructor (button, form) { // Валидация формы изменения пользователя
-    this.button = button
+    this.button = button;
     this.form = form
 
-    form.addEventListener('input', this.activButtonSave)
+    form.addEventListener('input', this.activButtonSave);
 
-    this.startFormEdit()
+    this.startFormEdit();
 
-    this.buttonSave = this.buttonSave.bind(this)
+    this.buttonSave = this.buttonSave.bind(this);
   }
 
   activButtonSave () {
@@ -29,21 +29,14 @@ class ActivButtonSave {
       buttonSave.removeAttribute('disabled')
       buttonSave.classList.add('popup__button_activ')
     }
+    
   }
 
   startFormEdit () {
     this.button.classList.remove('popup__button_activ')
     this.button.setAttribute('disabled', true)
+  
 
-    const editNameValue = document.getElementById('edit_name')
-
-    const textEditNameValue = document.querySelector('.user-info__name').textContent
-    editNameValue.value = textEditNameValue
-
-    const editJobValue = document.getElementById('edit_job')
-
-    const textEditJobValue = document.querySelector('.user-info__job').textContent
-    editJobValue.value = textEditJobValue
   }
 
   buttonSave () {

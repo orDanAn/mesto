@@ -19,7 +19,7 @@ const editButton = document.querySelector('.edit__button');
 const buttonSave = document.getElementById('edit__save');
 const placesList = document.querySelector('.places-list');
 const newForm = document.forms.new;
-const nameNewForm = newForm.elements.name;
+const nameNewForm = newForm.elements.name; 
 const linkNewForm = newForm.elements.link;
 const edit = document.getElementById('popup-edit');
 const editClose = document.getElementById('edit__close');
@@ -55,7 +55,8 @@ const api = new Api({                                               // запу�
  
 
 // Вызов функций 
-
+api.cardApi();                          // отрисовка карт с сервера
+api.userApiStart();                      // отрисовка данный пользоват
 
 new Popup(popup, buttonUserInfo, popupClose); // запускаем класс Popap
 new Popup(edit, editButton, editClose);           // запускаем редактор формы
@@ -75,7 +76,7 @@ errorButtonSave.formNameError(nameEditForm);
 errorButtonSave.formJobError(jobEditForm);
 
 const startButtonSave = new ActivButtonSave(buttonSave, editForm); // кнопка изменения пользователя
-startButtonSave.buttonSave();                                     // делает рабочей кнопку изменения пользователя
+startButtonSave.buttonSave();       // делает рабочей кнопку изменения пользователя
 
 const errorAvatarButton = new NewFormError(null, errorAvatarLink, avatarForm);
 errorAvatarButton.formAvatarError(linkAvatarForm);
@@ -86,8 +87,7 @@ saveAvatarButton.buttonAvatarStart(linkAvatarForm);
  
 
 
-  api.cardApi();                          // отрисовка карт с сервера
-  api.userApiStart();                      // отрисовка данный пользователя
+  
 
   
 export {cardContainer};
@@ -98,4 +98,6 @@ export {popupAvatar};
 export {buttonSave};
 export {popup};
   
+  
+
   
