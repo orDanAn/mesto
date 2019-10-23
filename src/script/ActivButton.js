@@ -1,5 +1,5 @@
-import {api} from './index';
-import {popup} from './index';
+import {api} from './script';
+import {popup} from './script';
 
 
 export class ActivButton {

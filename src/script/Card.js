@@ -1,5 +1,5 @@
-import {api} from './index';
-import {cardContainer} from './index';
+import {api} from './script';
+import {cardContainer} from './script';
 
 class Card {
     constructor(image, text, someLike, ownerId, cardId, likeId) {

@@ -1,5 +1,5 @@
-import {api} from './index';
-import {popupAvatar} from './index';
+import {api} from './script';
+import {popupAvatar} from './script';
 
 class AvatarButton {
   constructor(buttonAvatar, avatarForm) {

@@ -1,4 +1,4 @@
-import {Card} from './class_Card';
+import {Card} from './Card';
 
 class CardList {
   constructor (container, array) {

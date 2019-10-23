@@ -1,7 +1,7 @@
-import {nameEditForm} from './index';
-import {jobEditForm} from './index';
-import {api} from './index';
-import {buttonSave} from './index';
+import {nameEditForm} from './script';
+import {jobEditForm} from './script';
+import {api} from './script';
+import {buttonSave} from './script';
 
 
 class ActivButtonSave {

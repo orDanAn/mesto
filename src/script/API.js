@@ -1,5 +1,5 @@
-import {CardList} from './class_CardList';
-import {cardContainer} from './index';
+import {CardList} from './CardList';
+import {cardContainer} from './script';
 
 class Api {
   constructor (options) {
