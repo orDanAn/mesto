@@ -32,14 +32,7 @@ class AvatarButton {
           event.preventDefault();
           const avatarImage = document.querySelector('.user-info__photo');
           avatarImage.setAttribute('style', `background-image: url(${linkAvatarForm.value})`)
-          //let card = new CardList(cardContainer, []);
           api.avatarApi(linkAvatarForm.value);
-          
-          
-          //card.addCard(cardImage.value, cardName.value);
-        
-
-         
           popupAvatar.classList.remove('popup_is-opened');
           this.buttonAvatar.setAttribute('disabled', true)
           this.buttonAvatar.classList.remove('popup__button_activ');

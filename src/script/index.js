@@ -1,4 +1,4 @@
-import '../style.css'
+import '../style.css';
 import {AvatarButton} from './AvatarButton';
 
 import {ActivButton} from './ActivButton';
@@ -15,30 +15,16 @@ import {buttonSave} from './script';
 import {popup} from './script';
 import {buttonUserInfo, avatarForm, editForm, newForm, popupClose, buttonAdd, editButton, placesList, nameNewForm, linkNewForm, edit, editClose, popupImgClose, errorName, errorLink, errorEditName, errorEdidJob, avatarButton, popupAvatarClose, linkAvatarForm, errorAvatarLink, avatarSave, popupImg} from './script';
 
-
-
-
-
-
-
-
-
-
-
-
-
   
-  // Классы разнес  в отдельные файлы
-   
-  
+    
   // Вызов функций 
   api.cardApi();                          // отрисовка карт с сервера
   api.userApiStart();                      // отрисовка данный пользоват
   
   new Popup(popup, buttonUserInfo, popupClose); // запускаем класс Popap
   new Popup(edit, editButton, editClose);           // запускаем редактор формы
-  new Popup(popupImg,  placesList, popupImgClose)// запускаем картинку
-  new Popup(popupAvatar, avatarButton, popupAvatarClose) // запускаем замену аватара
+  new Popup(popupImg,  placesList, popupImgClose);  // запускаем картинку
+  new Popup(popupAvatar, avatarButton, popupAvatarClose); // запускаем замену аватара
   
   
   const startButtonadd = new ActivButton(buttonAdd, newForm); //активная кнопка добавления 

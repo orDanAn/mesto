@@ -17,11 +17,7 @@ class Card {
           
           if (event.target.classList.contains('place-card__like-icon_liked')) {
           event.target.classList.remove('place-card__like-icon_liked');
-          console.log('снял лайк')
-          console.log(card);
-          console.log(likeValue);
           likeValue.textContent = Number(likeValue.textContent) - 1;
-          
           api.cardLikeDel(card.getAttribute('data-id'));
           }   
           else  {
@@ -38,11 +34,9 @@ class Card {
           if (event.target.classList.contains("place-card__delete-icon")) {
           let card = event.target.closest('.place-card');
           if (confirm('Точно хотите удалить карту?'))
-            {cardContainer.removeChild(card);
-            //console.log(card);
-            console.log(card.getAttribute('data-id'));
-            //console.log(event.target);
-            api.cardDell(card.getAttribute('data-id'))
+            {
+             cardContainer.removeChild(card);
+             api.cardDell(card.getAttribute('data-id'));
             }
 
           }
@@ -55,16 +49,12 @@ class Card {
           const cardNameElement = document.createElement('h3');
           const buttonLike = document.createElement('button');
           const someLike = document.createElement('p');
-          //const idCard = document.createElement('div');
-
-  
+            
           card.classList.add('place-card');
           card.setAttribute(`data-id`,`${cardId}`);
           cardImageElement.classList.add('place-card__image');
           cardImageElement.setAttribute('style', `background-image: url(${imageValue})`);
 
-          
-              
           cardDescription.classList.add('place-card__description');
           cardNameElement.classList.add('nitialplace-card__name');
           cardNameElement.textContent = textValue;
@@ -76,20 +66,14 @@ class Card {
           }
           if (likeId === true) {
             buttonLike.classList.add('place-card__like-icon_liked')
-            console.log('есть совпадение')
-          }
+            }
           card.appendChild(cardDescription);
-          
           cardDescription.appendChild(cardNameElement);
           cardDescription.appendChild(buttonLike);
           buttonLike.appendChild(someLike);
           someLike.textContent = likeValue;
           someLike.classList.add('likeValue')
 
-          
-    
-            
-          
           return card;
         }
   }

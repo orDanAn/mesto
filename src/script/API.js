@@ -7,13 +7,7 @@ class Api {
   }
 
   userApiStart () {
-    // тут в общем сама логика не совсем верная. тебе нельзя манипулировать данными внутри класса АПИ, потому что этот класс отвечает только за получение и отправку данных. мы обсуждали это в тредах, и там должно быть сделано таким образом, что после создания экземпляра класса ты вызываешь метод этого экземпляра и дальне работаешь с данными уже в другом месте:
-
-    // const api = new Api (...)
-    // api.userApiStart(...).then(...)
-    // по всем остальным методам тоже самое
-
-    fetch(`${this.options.baseUrl}/users/me`, {
+      fetch(`${this.options.baseUrl}/users/me`, {
       headers: this.options.headers
     })
 
@@ -24,17 +18,15 @@ class Api {
         return Promise.reject(`Ошибка: ${res.status}`)
       })
       .then((result) => {
-        // console.log(result);                                                    // загрузка данных пользователя с сервера
+                                                           
+        // загрузка данных пользователя с сервера
         let user = result
-
-        // console.log(user.about, user.name);
-
-        const userInfoName = document.querySelector('.user-info__name')
-        const userInfoJob = document.querySelector('.user-info__job')
-        const avatarImage = document.querySelector('.user-info__photo')
-        const editNameVal = document.getElementById('edit_name')
-        const editJobVal = document.getElementById('edit_job')
-        avatarImage.setAttribute('style', `background-image: url(${user.avatar})`)
+        const userInfoName = document.querySelector('.user-info__name');
+        const userInfoJob = document.querySelector('.user-info__job');
+        const avatarImage = document.querySelector('.user-info__photo');
+        const editNameVal = document.getElementById('edit_name');
+        const editJobVal = document.getElementById('edit_job');
+        avatarImage.setAttribute('style', `background-image: url(${user.avatar})`);
         userInfoName.textContent = user.name;
         userInfoJob.textContent = user.about;
         editNameVal.value = user.name;
@@ -42,7 +34,7 @@ class Api {
         
       })
       .catch((err) => {
-        console.log(err)
+        console.log(err);
       })
   }
 
@@ -53,19 +45,19 @@ class Api {
 
       .then((res) => {
         if (res.ok) { // запрос загруженных кар на сервер
-          return res.json()
+          return res.json();
         }
-        return Promise.reject(`Ошибка: ${res.status}`)
+        return Promise.reject(`Ошибка: ${res.status}`);
       })
       .then((result) => {
-        new CardList(cardContainer, result)
-        return result
+        new CardList(cardContainer, result);
+        return result;
       })
       .then((res) => {
-        console.log(res)
+        console.log(res);
       })
       .catch((err) => {
-        console.log(err)
+        console.log(err);
       })
   }
 
@@ -97,20 +89,19 @@ class Api {
     })
       .then((res) => {
         if (res.ok) {
-          return res.json()
+          return res.json();
         }
-        return Promise.reject(`Ошибка: ${res.status}`)
+        return Promise.reject(`Ошибка: ${res.status}`);
       })
       .then((result) => {
-        // console.log(`${result.name}, ${result.link}`)
-        return result
+         return result;
       }) // отрисовка новой карты
       .then((result) => {
-        let card = new CardList(cardContainer, [])
-        card.addCard(result.link, result.name)
+        let card = new CardList(cardContainer, []);
+        card.addCard(result.link, result.name);
       })
       .catch((err) => {
-        console.log(err)
+        console.log(err);
       })
   }
 
@@ -123,16 +114,17 @@ class Api {
     })
       .then((res) => {
         if (res.ok) {
-          return res.json()
+          return res.json();
         }
       })
     return Promise.reject(`Ошибка: ${res.status}`)
       .then((res) => {
-        for (let i = 0; i < res.length; i++) { console.log(res[i].likes.length) }
-        return res
+        for (let i = 0; i < res.length; i++) { console.log(res[i].likes.length) 
+        }
+        return res;
       })
       .catch((err) => {
-        console.log(err)
+        console.log(err);
       })
   }
 
