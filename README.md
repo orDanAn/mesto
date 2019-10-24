@@ -1,5 +1,5 @@
 # mesto 
-## [сайт Mesto v1.6.1 ](https://ordanan.github.io/mesto/)
+## [сайт Mesto v1.6.2 ](https://ordanan.github.io/mesto/)
 
 #### В данной работе, мной был сделан блок на Java Script:
 
